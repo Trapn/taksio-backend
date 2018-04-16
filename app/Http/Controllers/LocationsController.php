@@ -24,7 +24,6 @@ class LocationsController extends Controller
             return locations::create($request->all());
         } else {
             echo "Wrong format to store";
-        }
-        
+        }     
     }
 }
