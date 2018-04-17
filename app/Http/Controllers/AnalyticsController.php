@@ -15,7 +15,9 @@ class AnalyticsController extends Controller
         $respondedRequests = array();
         $taxiResponses = TaxiResponse::all()->where('taxi_request_id', !null);
         foreach ($taxiResponses as $taxiResponse){
+            
             $respondedRequests[] = TaxiRequest::all()->where('id', $taxiResponse->taxi_id);
+            echo "hey";
         }
         return $respondedRequests;      
     }
@@ -28,8 +30,9 @@ class AnalyticsController extends Controller
         foreach ($taxiRequests as $taxiRequest){  
             $taxiResponses = TaxiResponse::all();
             foreach ($taxiResponses as $taxiResponse){
-                if($taxiRequest->id != $taxiResponse->taxi_id){
+                if($taxiResponse->taxi_id !== $taxiRequest->id){
                     $unRespondedRequests[] = $taxiRequest;
+                    echo "hey";
                 }
             }
         }
