@@ -29,6 +29,8 @@ Route::get('taxiIndex', 'TaxiController@index');
 
 Route::get('taxiResponse', 'TaxiResponseController@index');
 
+
+
 //Login for posting
 Route::post('register', 'UserController@register');
 Route::post('login', 'UserController@login');
@@ -41,4 +43,9 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::get('taxiRequests', 'TaxiRequestController@index');
 
 });
+
+Route::get('test', 'AnalyticsController@index');
+
+Route::get('analytics/unResponded', 'AnalyticsController@unResponded');
+Route::get('analytics/responded', 'AnalyticsController@responded');
 
