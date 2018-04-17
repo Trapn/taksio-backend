@@ -15,7 +15,7 @@ class CreateTaxiResponseTable extends Migration
     {
         Schema::create('taxi_responses', function (Blueprint $table) {
             $table->increments('id');
-            $table->time('expected_time');
+            $table->string('expected_time', 45);
             $table->float('price', 8, 2);
             $table->timestamps();
 
