@@ -23,6 +23,8 @@ Route::post('register', 'UserController@register');
 Route::post('taxiRequest', 'TaxiRequestController@store');
 Route::get('analytics', 'TaxiRequestController@index');
 
+Route::get('taxiRequests', 'TaxiRequestController@index');
+
 Route::post('addTaxi', 'TaxiController@store');
 Route::get('taxiIndex', 'TaxiController@index');
 
