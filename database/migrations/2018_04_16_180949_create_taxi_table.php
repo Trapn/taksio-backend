@@ -18,7 +18,7 @@ class CreateTaxiTable extends Migration
             $table->string('license_plate', 16);    
             $table->timestamps();
 
-            $table->unsignedInteger('taxi_company_id');
+            $table->unsignedInteger('taxi_company_id')->nullable();
             $table->foreign('taxi_company_id')->references('id')->on('taxi_company');
         });
     }
