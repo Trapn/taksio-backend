@@ -18,7 +18,7 @@ class CreateTaxiRequestTable extends Migration
             $table->string('location', 100);
             $table->string('destination', 100);
             $table->tinyInteger('luggage')->nullable();
-            $table->boolean('wheelchair_user');
+            $table->boolean('wheelchair_user')->nullable();
             $table->timestamps();
         });
     }
