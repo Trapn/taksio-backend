@@ -13,13 +13,13 @@ class CreateTaxiTable extends Migration
      */
     public function up()
     {
-        Schema::create('taxi', function (Blueprint $table) {
+        Schema::create('taxis', function (Blueprint $table) {
             $table->increments('id');
             $table->string('license_plate', 16);    
             $table->timestamps();
 
             $table->unsignedInteger('taxi_company_id')->nullable();
-            $table->foreign('taxi_company_id')->references('id')->on('taxi_company');
+            $table->foreign('taxi_company_id')->references('id')->on('taxi_companies');
         });
     }
 
@@ -30,6 +30,6 @@ class CreateTaxiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('taxi');
+        Schema::dropIfExists('taxis');
     }
 }

@@ -13,14 +13,14 @@ class CreateTaxiResponseTable extends Migration
      */
     public function up()
     {
-        Schema::create('taxi_response', function (Blueprint $table) {
+        Schema::create('taxi_responses', function (Blueprint $table) {
             $table->increments('id');
             $table->time('expected_time');
             $table->float('price', 8, 2);
             $table->timestamps();
 
             $table->unsignedInteger('taxi_id');
-            $table->foreign('taxi_id')->references('id')->on('taxi');
+            $table->foreign('taxi_id')->references('id')->on('taxis');
 
             $table->unsignedInteger('taxi_request_id');
             $table->foreign('taxi_request_id')->references('id')->on('taxi_requests');
@@ -34,6 +34,6 @@ class CreateTaxiResponseTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('taxi_response');
+        Schema::dropIfExists('taxi_responses');
     }
 }
