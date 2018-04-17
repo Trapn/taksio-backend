@@ -28,7 +28,7 @@ Route::post('addTaxi', 'TaxiController@store');
 Route::get('taxiIndex', 'TaxiController@index');
 
 Route::get('taxiResponse', 'TaxiResponseController@index');
-
+Route::post('taxiResponse', 'TaxiResponseController@store');
 
 
 //Login for posting
@@ -39,7 +39,7 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::get('details', 'UserController@details');
 
 
-    Route::post('taxiResponse', 'TaxiResponseController@store');
+    
     Route::get('taxiRequests', 'TaxiRequestController@index');
 
 });
