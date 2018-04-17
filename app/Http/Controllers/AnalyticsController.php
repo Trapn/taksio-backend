@@ -19,7 +19,7 @@ class AnalyticsController extends Controller
 
     public function unResponded()
     {
-        $taxiUnresponded = TaxiResponse::where('taxi_request_id', null)
+        $taxiUnresponded = TaxiResponse::where('taxi_request_id', 0)
         ->take(10)
         ->get();
         return $taxiUnresponded;
