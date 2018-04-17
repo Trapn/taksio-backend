@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class TaxiResponse extends Model
 {
-    protected $fillable = array('location', 'destination', 'luggage', 'wheel_user');
+    protected $fillable = array('expected_time', 'price', 'taxi_id', 'taxi_request_id');
 
 }
