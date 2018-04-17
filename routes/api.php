@@ -26,6 +26,8 @@ Route::post('locations', 'LocationsController@store');
 Route::post('sensors', 'SensorsController@store');
 Route::post('devices', 'DevicesController@store');
 
+Route::post('taxiRequest', 'TaxiRequestController@store');
+
 //Login for posting
 Route::post('login', 'UserController@login');
 Route::group(['middleware' => 'auth:api'], function(){

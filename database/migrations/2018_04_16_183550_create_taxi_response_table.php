@@ -23,7 +23,7 @@ class CreateTaxiResponseTable extends Migration
             $table->foreign('taxi_id')->references('id')->on('taxi');
 
             $table->unsignedInteger('taxi_request_id');
-            $table->foreign('taxi_request_id')->references('id')->on('taxi_request');
+            $table->foreign('taxi_request_id')->references('id')->on('taxi_requests');
         });
     }
 

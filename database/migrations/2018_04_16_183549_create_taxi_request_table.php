@@ -13,7 +13,7 @@ class CreateTaxiRequestTable extends Migration
      */
     public function up()
     {
-        Schema::create('taxi_request', function (Blueprint $table) {
+        Schema::create('taxi_requests', function (Blueprint $table) {
             $table->increments('id');
             $table->string('location', 100);
             $table->string('destination', 100);
@@ -30,6 +30,6 @@ class CreateTaxiRequestTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('taxi_request');
+        Schema::dropIfExists('taxi_requests');
     }
 }
