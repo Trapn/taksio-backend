@@ -11,6 +11,7 @@ class AnalyticsController extends Controller
 {
     public function responded()
     {
+        unset($respondedRequests);
         $respondedRequests = array();
         $taxiResponses = TaxiResponse::all()->where('taxi_request_id', !null);
         foreach ($taxiResponses as $taxiResponse){
@@ -21,6 +22,7 @@ class AnalyticsController extends Controller
 
     public function unResponded()
     {
+        unset($unRespondedRequests);
         $unRespondedRequests = array();
         $taxiRequests = TaxiRequest::all();
         foreach ($taxiRequests as $taxiRequest){  
