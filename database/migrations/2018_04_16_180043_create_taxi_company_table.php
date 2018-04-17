@@ -15,6 +15,7 @@ class CreateTaxiCompanyTable extends Migration
     {
         Schema::create('taxi_company', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name', 16);  
             $table->timestamps();
         });
     }
