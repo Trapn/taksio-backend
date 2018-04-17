@@ -17,7 +17,7 @@ class AnalyticsController extends Controller
         foreach ($taxiResponses as $taxiResponse){
             
             $respondedRequests[] = TaxiRequest::all()->where('id', $taxiResponse->taxi_id);
-            echo "hey";
+            
         }
         return $respondedRequests;      
     }
@@ -32,7 +32,7 @@ class AnalyticsController extends Controller
             foreach ($taxiResponses as $taxiResponse){
                 if($taxiResponse->taxi_id !== $taxiRequest->id){
                     $unRespondedRequests[] = $taxiRequest;
-                    echo "hey";
+                    
                 }
             }
         }
