@@ -11,13 +11,13 @@ class AnalyticsController extends Controller
 {
     public function responded()
     {
-        $taxiResponded = TaxiResponse::where('taxi_request_id', !null)->get();
+        $taxiResponded = TaxiResponse::where('taxi_request_id', !null);
         return $taxiResponded;
     }
 
     public function unResponded()
     {
-        $taxiUnresponded = TaxiResponse::where('taxi_request_id', null)->get();
+        $taxiUnresponded = TaxiResponse::where('taxi_request_id', null);
         return $taxiUnresponded;
     }
 }
