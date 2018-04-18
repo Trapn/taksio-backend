@@ -24,12 +24,8 @@ class AnalyticsController extends Controller
         $taxiRequests = TaxiRequest::all();
         $taxiResponses = TaxiResponse::all();
         foreach ($taxiRequests as $taxiRequest){  
-            foreach ($taxiResponses as $taxiResponse){
-                if($taxiResponse->taxi_request_id !== $taxiRequest->id){
-                    $unRespondedRequests[] = $taxiRequest;
-                    
-                }
-            }
+            
+            
         }
         return $unRespondedRequests;
     }
