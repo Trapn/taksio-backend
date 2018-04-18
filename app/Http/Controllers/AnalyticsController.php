@@ -15,7 +15,7 @@ class AnalyticsController extends Controller
 
         foreach ($taxiResponses as $taxiResponse){
             
-            $responded = TaxiRequest::where('id', $taxiResponse->taxi_id)->get();       
+            $responded[] = TaxiRequest::where('id', $taxiResponse->taxi_id)->get();       
         }    
         return $responded;
     }
