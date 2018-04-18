@@ -27,7 +27,7 @@ Route::get('taxiIndex', 'TaxiController@index');
 
 //ResponseRoutes (POST auth?? todo)
 Route::get('taxiResponse', 'TaxiResponseController@index');
-Route::post('taxiResponse', 'TaxiResponseController@store');
+
 
 //Routes for the analytics
 Route::get('test', 'AnalyticsController@index');
@@ -45,6 +45,7 @@ Route::post('login', 'UserController@login');
 Route::group(['middleware' => 'auth:api'], function(){
     Route::get('details', 'UserController@details');
     Route::get('taxiRequests', 'TaxiRequestController@index');
+    Route::post('taxiResponse', 'TaxiResponseController@store');
 });
 
 
