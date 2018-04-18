@@ -18,34 +18,35 @@ use Illuminate\Http\Request;
 //    return $request->user();
 //});
 
-
-
+//Route for the request frontpage
 Route::post('taxiRequest', 'TaxiRequestController@store');
 
-Route::get('analytics', 'TaxiRequestController@index');
-//Add taxi
+
+//Routes
 Route::post('addTaxi', 'TaxiController@store');
 Route::get('taxiIndex', 'TaxiController@index');
 
+//ResponseRoutes (POST auth?? todo)
 Route::get('taxiResponse', 'TaxiResponseController@index');
 Route::post('taxiResponse', 'TaxiResponseController@store');
 
+//Routes for the analytics
+Route::get('test', 'AnalyticsController@index');
+
+Route::get('analytics', 'TaxiRequestController@index');
+
+Route::get('analytics/unResponded', 'AnalyticsController@unResponded');
+Route::get('analytics/responded', 'AnalyticsController@responded');
 
 //Login for posting
 Route::post('register', 'UserController@register');
 Route::post('login', 'UserController@login');
 
+//Auth routes
 Route::group(['middleware' => 'auth:api'], function(){
     Route::get('details', 'UserController@details');
-
-
-    
     Route::get('taxiRequests', 'TaxiRequestController@index');
-
 });
 
-Route::get('test', 'AnalyticsController@index');
 
-Route::get('analytics/unResponded', 'AnalyticsController@unResponded');
-Route::get('analytics/responded', 'AnalyticsController@responded');
 
