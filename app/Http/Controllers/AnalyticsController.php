@@ -20,6 +20,6 @@ class AnalyticsController extends Controller
 
     public function unResponded()
     {
-
+        
     }
 }
