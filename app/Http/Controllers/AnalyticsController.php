@@ -13,20 +13,13 @@ class AnalyticsController extends Controller
     {   
         $taxiResponses = TaxiResponse::all()->where('taxi_request_id', !null);
         foreach($taxiResponses as $taxiResponse){
-            $respondedRequests[] = TaxiRequest::all()->where('id', $taxiResponse->taxi_request_id);
+            $respondedRequests[] = TaxiRequest::where('id', $taxiResponse->taxi_request_id)->get();
         }
         return $respondedRequests;
     }
 
     public function unResponded()
     {
-        $unRespondedRequests = array();
-        $taxiRequests = TaxiRequest::all();
-        $taxiResponses = TaxiResponse::all();
-        foreach ($taxiRequests as $taxiRequest){  
-            
-            
-        }
-        return $unRespondedRequests;
+
     }
 }

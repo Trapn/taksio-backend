@@ -21,7 +21,6 @@ use Illuminate\Http\Request;
 //Route for the request frontpage
 Route::post('taxiRequest', 'TaxiRequestController@store');
 
-
 //Routes
 Route::post('addTaxi', 'TaxiController@store');
 Route::get('taxiIndex', 'TaxiController@index');
