@@ -10,16 +10,13 @@ use App\Taxi;
 class AnalyticsController extends Controller
 {
     public function responded()
-    {
-        $respondedRequests = array();
-        $taxiResponses = TaxiResponse::all()->where('taxi_request_id', !null)->get();
-        
+    {   
+        $taxiResponses = TaxiResponse::all()->where('taxi_request_id', !null);
+
         foreach ($taxiResponses as $taxiResponse){
             
-            $respondedRequests[] = TaxiRequest::all()->where('id', $taxiResponse->taxi_id);
-            
-        }
-        return $respondedRequests;      
+            return TaxiRequest::where('id', $taxiResponse->taxi_id)->get();       
+        }    
     }
 
     public function unResponded()
