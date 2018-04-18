@@ -12,8 +12,8 @@ class AnalyticsController extends Controller
     public function responded()
     {   
         $taxiResponses = TaxiResponse::where('taxi_request_id', !null)->first();
-        foreach($taxiResponses->taxi_id as $id){
-            echo $id;
+        foreach($taxiResponses as $taxiResponse){
+            echo $taxiResponse;
         }
 
     }
